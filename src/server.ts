@@ -7,17 +7,21 @@ const HttpsServer = require('https').createServer;
 
 const socketPort = 3000;
 
+console.log('create https');
 const https = HttpsServer({
     cert: fs.readFileSync("/etc/letsencrypt/live/movethemusic.codware.com/fullchain.pem"),
     key: fs.readFileSync("/etc/letsencrypt/live/movethemusic.codware.com/privkey.pem")
 })
 
+console.log('create websocket');
 const server = new WebSocket.Server({server: https}, () => {
 	console.log(`O websocket está escutando na porta ${socketPort}.`);
 });
 
+console.log('https listen');
 https.listen(socketPort);
 
+console.log('create lobby');
 const lb = new Lobby();
 
 server.on('connection', ws => {
