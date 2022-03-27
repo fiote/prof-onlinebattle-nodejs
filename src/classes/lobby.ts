@@ -55,7 +55,7 @@ export default class Lobby {
 		this.players = this.players.filter(p => p != player);
 		player.battle?.tryRemove(player);
 		this.battle.tryRemove(player);
-		this.broadcastBattleSize();
+		// this.broadcastBattleSize();
 	}
 
 	broadcastBattleSize() {
