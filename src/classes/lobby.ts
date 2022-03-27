@@ -21,7 +21,7 @@ export default class Lobby {
 
 	generateNewBattle() {
 		this.battle = new Battle();
-		for (let i = 1; i <= 4; i++) this.battle.addPlayer({username: 'Bot#'+i} as Player);
+		// for (let i = 1; i <= 5; i++) this.battle.addPlayer({username: 'Bot#'+i} as Player);
 		this.battles.push(this.battle);
 		return this.battle;
 	}
