@@ -36,6 +36,7 @@ server.on('connection', ws => {
 	socket.on("lobby", (event, callback) => {
 		if (event.ev == "get-lobby") {
 			lb.sendBattleSize(socket);
+			callback({});
 		}
 
 		if (event.ev == "enter-battle") {
