@@ -1,0 +1,39 @@
+attack
+defend
+magic
+
+attack vs attack = both get damaged
+attack vs defend = attacker cant attack next turn
+attack vs magic = magic gets damaged and cant act next turn
+attack vs ---- = target gets damage x2
+
+defend vs defend = nothing happens
+defend vs attack = attacker cant attack next turn
+defend vs magic = defend cant act next turn
+defend vs ---- = target gets stunned
+
+magic vs magic = both get damaged, both cant act next turn
+magic vs defend = defend gets damage and cant act next turn
+magic vs attack = magic gets damage and cant attack next turn
+magic vs ---- = target gets damage x2
+
+
+
+if you attack
+- get damaged [-1]
+- get stunned [-2]
+- do damage and stuns [+3]
+total: 0
+
+
+if you defend
+- nothing happens [0]
+- stuns [+2]
+- get stunned [-2]
+total: 0
+
+if you magic
+- do damage, stuns, get damaged, get stunned [0]
+- do damage and stuns [+3]
+- get damaged and get stunned [-3]
+total: 0
