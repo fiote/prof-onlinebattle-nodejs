@@ -44,7 +44,7 @@ server.on('connection', ws => {
 		}
 		if (event.ev == "leave-battle") {
 			lb.processDisconnect(player);
-			callback({});
+			callback({status: true});
 		}
 	});
 
