@@ -9,10 +9,11 @@ const socketPort = 3000;
 
 const https = HttpsServer({
     cert: fs.readFileSync("/etc/letsencrypt/live/movethemusic.codware.com/fullchain.pem"),
-    key: fs.readFileSync("/etc/letsencrypt/live/movethemusic.codware.com/privkey.pem")
+    key: fs.readFileSync("/etc/letsencrypt/live/movethemusic.codware.com/privkey.pem"),
+	port: socketPort
 })
 
-const server = new WebSocket.Server({server: https, port: socketPort}, () => {
+const server = new WebSocket.Server({server: https}, () => {
 	console.log(`O websocket está escutando na porta ${socketPort}.`);
 });
 
